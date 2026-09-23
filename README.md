@@ -1,94 +1,252 @@
-# Melodia — Sua Música, Sua Forma
 
-Landing page do **Melodia**, um app de músicas para quem ama música, jovens e pessoas que buscam novas descobertas musicais. Projeto desenvolvido para o **Checkpoint 5 de Front-End (FIAP)**.
+# Melodia
 
-🔗 **Página publicada:** https://arturfbrandi.github.io/cp5-front-end/
+### Sua Música, Sua Forma
 
-## Sobre a aplicação
+Landing page de uma plataforma de streaming musical, desenvolvida com foco em experiência do usuário, design responsivo e interatividade.
 
-A página apresenta os diferenciais do Melodia: **qualidade de som superior**, **playlists personalizadas**, **descoberta de novos artistas** e **interface intuitiva**. O visual é moderno e clean, com tema escuro, cores vibrantes (gradiente rosa → roxo → índigo) e elementos musicais como disco de vinil, equalizador animado e letras sincronizadas.
+O **Melodia** é um projeto acadêmico desenvolvido para o Checkpoint 5 da disciplina de Front-End Design da FIAP. A aplicação apresenta a proposta de uma plataforma de streaming que combina qualidade sonora, personalização e descoberta musical em uma interface moderna e intuitiva.
 
-A direção visual foi inspirada em referências de landing pages do [Dribbble](https://dribbble.com/search/front-end): tema escuro com brilhos coloridos, tipografia grande nos títulos, botões em formato de pílula, cards em grid "bento" e prova social com avatares.
+O projeto utiliza HTML5, CSS3, Tailwind CSS e JavaScript para construir uma experiência de navegação dinâmica, acessível e adaptada a diferentes dispositivos.
 
-### Seções
+**[Acessar aplicação](https://arturfbrandi.github.io/cp5-front-end/)**
 
-| Seção | O que tem |
-| --- | --- |
-| **Menu fixo** | Transparente no topo e com efeito de vidro (blur) ao rolar, feito em JavaScript. Menu hambúrguer no mobile e destaque da seção atual. |
-| **Hero** | Título "Melodia: Sua Música, Sua Forma", descrição, botão **"Ouvir Agora"** e um mockup do app com **player de música funcional** (tocar/pausar, próxima, anterior, aleatório, repetir, barra de progresso). |
-| **Gêneros** | Faixa animada infinita com os estilos musicais. |
-| **Apresentação** | Os 4 benefícios principais em cards com ícones do Font Awesome. |
-| **Funcionalidades** | Grid "bento" com playlists por humor (interativo), Hi-Fi, radar semanal, letras sincronizadas, modo offline e "Ouça junto". |
-| **Depoimentos** | 6 depoimentos com citação, avaliação e foto de perfil. |
-| **Formulário de contato** | Coleta nome, e-mail e estilo favorito para campanhas de marketing, com validação em JavaScript e mensagem de sucesso. |
-| **Rodapé** | Contato, redes sociais, navegação e Política de Privacidade (modal). |
+---
 
-## Tecnologias
+## 1. Visão geral
 
-- **HTML5**: estrutura semântica (`header`, `nav`, `main`, `section`, `article`, `figure`, `blockquote`, `footer`, `dialog`).
-- **CSS3** (`css/style.css`): variáveis CSS, gradientes, `@keyframes`, `backdrop-filter`, `mask-image`, `prefers-reduced-motion`.
-- **Tailwind CSS v4**: layout responsivo e estilização com classes utilitárias; cores e fontes da marca definidas com `@theme`.
-- **Font Awesome 6**: ícones.
-- **Google Fonts**: *Unbounded* (títulos) e *Manrope* (textos).
-- **JavaScript**: menu fixo, menu mobile, player de áudio, playlists por humor, validação do formulário e modal.
-- **AOS (Animate On Scroll)**: biblioteca JS de animações ao rolar a página.
+O Melodia foi idealizado para proporcionar uma experiência musical personalizada, conectando usuários a novos artistas, gêneros e conteúdos de acordo com suas preferências.
 
-## Destaques técnicos (para a apresentação)
+A landing page apresenta os principais diferenciais da plataforma e permite que o visitante explore seus recursos por meio de componentes interativos.
 
-- **Estrutura HTML:** cada parte da página é uma `section` com `id`, usada pelos links do menu. Os ícones decorativos usam `aria-hidden="true"` e os botões só com ícone têm `aria-label`.
-- **Classes Tailwind:** os tokens da marca ficam em `@theme` no `<head>` (ex.: `--color-brand-500`), o que gera classes como `bg-ink-950`, `text-brand-400` e `font-display`.
-- **Layout responsivo (mobile first):** as classes sem prefixo valem para o celular e os prefixos `sm:`, `md:` e `lg:` adaptam o layout. Exemplos: `grid sm:grid-cols-2 lg:grid-cols-4` nos benefícios, `md:col-span-2` no grid de funcionalidades e `sm:columns-2 lg:columns-3` nos depoimentos.
-- **Menu com transparência:** `js/main.js` adiciona a classe `header-scrolled` quando `window.scrollY > 24`. Essa classe (em `css/style.css`) aplica fundo translúcido + `backdrop-filter: blur()`.
-- **Interações em JS:**
-  - o player usa a API de `Audio` do navegador (eventos `play`, `pause`, `timeupdate`, `ended`);
-  - o `IntersectionObserver` destaca no menu a seção visível;
-  - o formulário é validado sem recarregar a página e salva o cadastro no `localStorage` (o projeto não tem back-end);
-  - a Política de Privacidade usa o elemento nativo `<dialog>`.
-- **CSS3 + Tailwind juntos:** o Tailwind cuida de layout, espaçamento e cores. O `style.css` fica com o que o Tailwind não cobre bem: animações (`equalize`, `spin`, `marquee`, `lyric`), capas geradas com `radial-gradient` e os estados alterados pelo JS.
-- **Acessibilidade:** link "Pular para o conteúdo", foco visível, erros do formulário ligados aos campos com `aria-describedby`/`aria-invalid`, e animações desligadas para quem ativa "reduzir movimento" no sistema.
+A interface utiliza uma identidade visual baseada em tons escuros, gradientes e elementos gráficos associados ao universo musical, combinando estética contemporânea com princípios de usabilidade.
 
-## Estrutura de pastas
+### Objetivos do projeto
 
-```
+- Desenvolver uma landing page responsiva utilizando tecnologias Front-End.
+- Aplicar conceitos de HTML semântico e acessibilidade.
+- Construir componentes visuais reutilizáveis e interativos.
+- Implementar funcionalidades dinâmicas utilizando JavaScript.
+- Proporcionar uma experiência consistente em dispositivos móveis e desktops.
+- Aplicar boas práticas de organização, versionamento e documentação de código.
+
+---
+
+## 2. Funcionalidades
+
+A aplicação apresenta os recursos da plataforma por meio de seções organizadas e componentes interativos.
+
+| Funcionalidade | Descrição |
+|---|---|
+| Navegação responsiva | Menu fixo com adaptação para dispositivos móveis e destaque da seção ativa. |
+| Player musical | Reprodução de áudio com controles de reprodução, navegação entre faixas, modo aleatório, repetição e barra de progresso. |
+| Exploração de gêneros | Apresentação dinâmica de diferentes estilos musicais por meio de uma faixa animada. |
+| Playlists personalizadas | Seleção interativa de playlists organizadas por diferentes estados de espírito. |
+| Apresentação de recursos | Grid de funcionalidades com informações sobre qualidade sonora, descoberta musical e recursos da plataforma. |
+| Depoimentos | Seção de prova social com avaliações e perfis demonstrativos. |
+| Formulário de contato | Validação de dados em JavaScript, armazenamento local e confirmação visual de cadastro. |
+| Política de privacidade | Exibição de informações em uma janela modal nativa. |
+
+### Player de áudio
+
+O player é um dos principais componentes interativos da aplicação.
+
+Desenvolvido com JavaScript e a API `Audio` do navegador, permite reproduzir arquivos de áudio locais e controlar a execução das faixas diretamente pela interface.
+
+O componente oferece controles de reprodução e pausa, navegação entre músicas, reprodução aleatória, repetição e acompanhamento do progresso da faixa.
+
+Os eventos `play`, `pause`, `timeupdate` e `ended` são utilizados para sincronizar os controles e as informações exibidas na interface.
+
+**Nota:** o Melodia é uma landing page demonstrativa. Funcionalidades como modo offline, recomendações personalizadas e reprodução compartilhada são apresentadas como recursos propostos para a plataforma, não como serviços completos implementados.
+
+---
+
+## 3. Tecnologias utilizadas
+
+| Tecnologia | Aplicação |
+|---|---|
+| HTML5 | Estruturação semântica e organização dos elementos da página. |
+| CSS3 | Estilização personalizada, animações, gradientes e efeitos visuais. |
+| Tailwind CSS v4 | Construção de layouts responsivos e aplicação de classes utilitárias. |
+| JavaScript | Implementação do player musical, navegação, formulários e demais interações. |
+| Font Awesome 6 | Biblioteca de ícones utilizados nos componentes da interface. |
+| Google Fonts | Utilização das famílias tipográficas Unbounded e Manrope. |
+| AOS | Animações de entrada dos elementos durante a rolagem. |
+| Git e GitHub | Versionamento e gerenciamento colaborativo do código-fonte. |
+| GitHub Pages | Hospedagem e publicação da aplicação. |
+
+---
+
+## 4. Arquitetura e implementação
+
+### Estrutura semântica
+
+A aplicação utiliza elementos semânticos do HTML5, como `header`, `nav`, `main`, `section`, `article`, `figure` e `footer`.
+
+Cada seção possui um identificador individual, permitindo a navegação por âncoras e a integração com o sistema de identificação da seção ativa.
+
+A utilização desses elementos contribui para a organização do documento, sua manutenção e a acessibilidade da interface.
+
+### Estilização e responsividade
+
+O projeto adota a abordagem *mobile first*, priorizando a experiência em dispositivos móveis e adaptando os componentes para resoluções maiores.
+
+O Tailwind CSS é utilizado para definir layouts, espaçamentos, tipografia e estilos responsivos por meio de classes utilitárias.
+
+A identidade visual é centralizada em tokens personalizados definidos com a diretiva `@theme`, permitindo a reutilização de cores e fontes em diferentes componentes.
+
+O arquivo `css/style.css` complementa a estilização com animações, efeitos visuais e estados dinâmicos controlados pelo JavaScript.
+
+Entre os recursos utilizados estão:
+
+- CSS Grid e Flexbox para organização dos layouts.
+- Media queries e breakpoints responsivos.
+- Animações personalizadas com `@keyframes`.
+- Gradientes e efeitos de transparência.
+- `backdrop-filter` para o efeito de desfoque do cabeçalho.
+- `prefers-reduced-motion` para adequação das animações às preferências do usuário.
+
+### Interatividade com JavaScript
+
+O arquivo `js/main.js` concentra a lógica das interações da aplicação.
+
+**Navegação dinâmica:** o cabeçalho altera sua aparência conforme a posição de rolagem da página. A API `IntersectionObserver` identifica a seção visível e atualiza o destaque correspondente no menu.
+
+**Player musical:** a API `Audio` gerencia a reprodução das faixas e permite sincronizar os controles da interface com o estado do áudio.
+
+**Playlists por humor:** a interação com os componentes permite explorar diferentes seleções musicais.
+
+**Formulário de contato:** a validação é realizada no navegador, sem recarregar a página. Após o preenchimento válido, os dados são armazenados no `localStorage` e uma mensagem de confirmação é exibida.
+
+**Política de privacidade:** o elemento HTML `dialog` é utilizado para apresentar o conteúdo em uma janela modal.
+
+### Acessibilidade
+
+A interface incorpora recursos voltados à acessibilidade e à navegação por diferentes dispositivos e métodos de interação.
+
+Entre as implementações estão a estrutura semântica, o link para acesso direto ao conteúdo principal, indicadores de foco visível e atributos ARIA para identificação de controles e mensagens de erro.
+
+A aplicação também considera a preferência do usuário por movimento reduzido, adaptando as animações por meio de `prefers-reduced-motion`.
+
+---
+
+## 5. Estrutura de diretórios
+
+```text
 cp5-front-end/
-├── index.html          # página principal
+│
+├── index.html
 ├── css/
-│   └── style.css       # estilos customizados (CSS3)
+│   └── style.css
 ├── js/
-│   └── main.js         # interações da página
+│   └── main.js
 ├── assets/
-│   ├── audio/          # prévias das músicas (CC BY 4.0)
-│   └── img/            # favicon/logo e fotos de perfil
-└── requisitos/         # enunciado do checkpoint
+│   ├── audio/
+│   └── img/
+├── requisitos/
+└── README.md
 ```
 
-## Como executar
+| Diretório ou arquivo | Descrição |
+|---|---|
+| `index.html` | Estrutura principal da landing page. |
+| `css/style.css` | Estilos personalizados, animações e efeitos visuais. |
+| `js/main.js` | Lógica de interação e funcionalidades desenvolvidas em JavaScript. |
+| `assets/audio/` | Arquivos de áudio utilizados no player musical. |
+| `assets/img/` | Recursos visuais, incluindo imagens de perfil, logo e favicon. |
+| `requisitos/` | Documentação e enunciado do Checkpoint. |
+| `README.md` | Documentação técnica do projeto. |
 
-Não precisa instalar nada, basta um navegador. Para o player de áudio funcionar direito, sirva a pasta com um servidor local:
+---
+
+## 6. Execução local
+
+O projeto é uma aplicação Front-End estática e não requer instalação de dependências ou configuração de um servidor back-end.
+
+### Pré-requisitos
+
+- Navegador web atualizado.
+- Git para clonagem do repositório.
+- Python 3 ou uma extensão de servidor local, como Live Server.
+
+### Instalação
+
+Clone o repositório:
 
 ```bash
-python3 -m http.server 8000
-# abra http://localhost:8000
+git clone https://github.com/arturfbrandi/cp5-front-end.git
 ```
 
-Outra opção é usar a extensão **Live Server** do VS Code.
+Acesse o diretório do projeto:
 
-## Publicação no GitHub Pages
+```bash
+cd cp5-front-end
+```
 
-1. Envie o código para a branch `main` do repositório.
-2. No GitHub, abra **Settings → Pages**.
-3. Em **Build and deployment**, escolha **Deploy from a branch**, depois a branch `main` e a pasta `/ (root)`.
-4. Em alguns minutos a página fica disponível em `https://arturfbrandi.github.io/cp5-front-end/`.
+Inicie um servidor HTTP local:
 
-## Créditos
+```bash
+python -m http.server 8000
+```
 
-- **Músicas:** "Chill Wave", "Carefree" e "Local Forecast - Elevator", de Kevin MacLeod ([incompetech.com](https://incompetech.com)), licenciadas sob [Creative Commons: By Attribution 4.0](https://creativecommons.org/licenses/by/4.0/). Os arquivos foram cortados em prévias de 90 segundos.
-- **Fotos de perfil:** [Unsplash](https://unsplash.com) (Unsplash License).
-- **Ícones:** [Font Awesome](https://fontawesome.com) (Free License).
-- Os nomes, depoimentos, números e contatos exibidos na página são fictícios.
+Acesse a aplicação pelo navegador:
 
-## Integrantes
+```text
+http://localhost:8000
+```
 
-- Artur Fabi Brandi RM570258
-- Victor Bertacchini De Godoy RM571452
-- Victor Lula Heineken Rodrigues RM570782
+Alternativamente, abra o projeto no Visual Studio Code e utilize a extensão Live Server para executar o arquivo `index.html`.
+
+O uso de um servidor local é recomendado para garantir o carregamento adequado dos recursos de áudio.
+
+---
+
+## 7. Publicação
+
+A aplicação está publicada no GitHub Pages e pode ser acessada diretamente pelo navegador.
+
+**[Melodia — Aplicação publicada](https://arturfbrandi.github.io/cp5-front-end/)**
+
+A publicação é realizada a partir da branch `main`, utilizando a pasta raiz do repositório como origem dos arquivos estáticos.
+
+---
+
+## 8. Créditos e licenciamento
+
+### Recursos de áudio
+
+As músicas utilizadas no player são composições de Kevin MacLeod, disponibilizadas pelo site [Incompetech](https://incompetech.com).
+
+- Chill Wave.
+- Carefree.
+- Local Forecast - Elevator.
+
+Os arquivos foram utilizados em versões reduzidas de aproximadamente 90 segundos.
+
+Licença informada para os arquivos de áudio: [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+
+### Recursos visuais
+
+- Fotografias: [Unsplash](https://unsplash.com) — Unsplash License.
+- Ícones: [Font Awesome](https://fontawesome.com) — Free License.
+- Referências de interface: [Dribbble](https://dribbble.com/search/front-end).
+
+Os nomes, depoimentos, avaliações e dados apresentados na aplicação são fictícios e utilizados exclusivamente para fins demonstrativos.
+
+---
+
+## 9. Equipe de desenvolvimento
+
+Projeto desenvolvido por estudantes da **FIAP — Faculdade de Informática e Administração Paulista**, como parte do Checkpoint 5 da disciplina de Front-End Design.
+
+| Integrante | 
+|---|---|
+| Artur Fabi Brandi | RM570258 |
+| Victor Bertacchini De Godoy | RM571452 |
+| Victor Lula Heineken Rodrigues | RM570782 |
+
+---
+
+**FIAP — Engenharia de Software | Checkpoint 5 — Front-End Design**
+
+Melodia — Sua Música, Sua Forma.
