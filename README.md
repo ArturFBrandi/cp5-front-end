@@ -21,6 +21,19 @@ A landing page apresenta os principais diferenciais da plataforma e permite que 
 
 A interface utiliza uma identidade visual baseada em tons escuros, gradientes e elementos gráficos associados ao universo musical, combinando estética contemporânea com princípios de usabilidade.
 
+### Demonstração rápida
+
+Para avaliar os principais recursos da landing page, siga este fluxo:
+
+1. Acesse a aplicação publicada ou execute o projeto localmente.
+2. Redimensione a janela ou abra a página no celular para conferir o menu responsivo; depois role a página e observe o destaque da seção ativa no menu.
+3. Use o player musical para reproduzir, pausar, avançar faixas, voltar músicas e testar os modos aleatório e repetição.
+4. Explore a seção de playlists por humor e observe a troca dinâmica do conteúdo.
+5. Preencha o formulário de contato com dados válidos e inválidos para conferir as mensagens de erro e a confirmação de cadastro.
+6. Abra a política de privacidade no rodapé para validar a janela modal.
+
+Esse roteiro cobre navegação, interatividade, responsividade, formulário, acessibilidade básica e uso da API `Audio` do navegador.
+
 ### Objetivos do projeto
 
 - Desenvolver uma landing page responsiva utilizando tecnologias Front-End.
